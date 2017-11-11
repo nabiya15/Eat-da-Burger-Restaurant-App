@@ -1,0 +1,52 @@
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background: #FFFF99;
+	font-family: 'Dosis', sans-serif;
+}
+
+h1{
+	text-align: center;
+	border-bottom: 1px solid lightgray;
+}
+#mainBody{
+	width: 100%;
+	padding: 10px;
+	margin: 10px;
+}
+#mainBody div{
+	width: 30%;
+	float: left;
+	margin: 8px;
+	padding: 8px;
+	text-align: center;
+}
+
+#form button{
+	text-align: center;
+	margin: 0 auto;
+	display: block;
+	border-radius:5px;
+	width: 100px;
+	height: 30px;
+}
+#form textarea{
+	text-align: center;
+	margin: 0 auto;
+	display: block;
+	width: 85%;
+	height: 50px;
+	border-radius:5px;
+}
+
+p{
+	 background: lightgray;
+	 font-size: 20px;
+	 line-height: 1.5em;
+	 padding: 5px;
+	 margin: 5px;
+}

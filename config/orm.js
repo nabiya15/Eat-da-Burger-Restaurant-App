@@ -1,8 +1,8 @@
-var connection = require("./connection.js");
+var connection = require("../config/connection.js");
 //prints question marks for each parameter in sql query
 function printQuestionMarks(number){
 	var array =[];
-	for(var i= 0; i<number.length; i++){
+	for(var i= 0; i<number; i++){
 		array.push("?");
 	}
 	return array.toString();
@@ -25,7 +25,7 @@ function objToSql(ob){
 var orm = {
 	// display all the burgers in the database
 	all : function(tableInput,cb){
-		var query = "SELECT * FROM"+tableInput;
+		var query = "SELECT * FROM "+tableInput;
 		connection.query(query,function(error,result){
 			if(error){
 				return console.log(error);
@@ -35,15 +35,16 @@ var orm = {
 	},
 	// create a new table row or an entry into the sql table
 	create : function(table,columns,values,cb){
-		var query = "INSERT INTO"+table;
+		console.log("Values: "+printQuestionMarks(values.length));
+		var query = "INSERT INTO "+table;
 		query += "(";
 		query += columns.toString();
 		query += ")";
-		query += "VALUES (";
+		query += " VALUES (";
 		query += printQuestionMarks(values.length);
-		query += ")";
+		query += ");";
 
-		console.log(query);
+		//console.log(query);
 		connection.query(query, values, function(error, result){
 			if(error){
 				throw error;
@@ -53,10 +54,10 @@ var orm = {
 	},
 	// update the value of devoured and send the burger to the other side of the page
 	update : function(table, objOfColVals,condition, cb){
-		var query ="UPDATE"+table;
-		query += "SET";
+		var query ="UPDATE "+table;
+		query += " SET ";
 		query += objToSql(objOfColVals);
-		query += "WHERE";
+		query += " WHERE ";
 		query += condition;
 
 		console.log(query);
