@@ -1,33 +1,41 @@
-<img src= "{{../public/assets/images/burger}}" width="50px" height="50px" alt="Burger"></img>
-<h1>Eat - Da - Burger</h1>
-<div id="mainBody">
-    <div id="burgerTarget">
-      <ol>  
-        {{#each burgers}}
-            {{#unless devoured}}
-             <li>
-                <p> {{burger_name}}
-                  <button data-id="{{id}}" class="devour">Devour it!!</button>
-                </p>
-            </li>
-            {{/unless}}
-        {{/each}}  
-      </ol>
+<div id="container">
+    <div class="header">
+      <div class="transBox">
+        <h1>Eat - Da - Burger</h1>
+      </div>
     </div>
-    <div id="form">
-      <textarea name="burgerName" id="name"></textarea><br>
-      <button type="submit" id="submit">SUBMIT</button><br>
-      <h5>Enter the burger you want to eat and hit the submit button</h5>
-    </div>
-    <div id="devourtarget">
-       <ol>  
-        {{#each burgers}}
-            {{#if devoured}}
-             <li>
-              <p>{{ burger_name }}</br></p>
-            </li>
-            {{/if}}
-        {{/each}}  
-      </ol>
+  
+    <div id="mainBody">
+        <div id="burgerTarget">
+          <ul>  
+            {{#each burgers}}
+                {{#unless devoured}}
+                 <li>
+                     {{burger_name}}
+                      <button data-id="{{id}}" class="btn btn-danger devour pull-right btn-sm"><i class="fa fa-cutlery" aria-hidden="true"></i>Devour it!!</button>
+                  
+                </li>
+                {{/unless}}
+            {{/each}}  
+          </ul>
+        </div>
+        <div id="form">
+          <textarea class="text-default" name="burgerName" id="name" placeholder="Enter the name of your burger"></textarea><br>
+          <button type="submit" id="submit" class="btn btn-primary btn-lg"><i class="fa fa-thumbs-up" aria-hidden="true"></i>SUBMIT</button><br>
+          <h5>Enter the burger you want to eat and hit the submit button</h5>
+        </div>
+        <div id="devourtarget">
+           <ul>  
+            {{#each burgers}}
+                {{#if devoured}}
+                 <li>
+
+                  <i class="fa fa-cutlery align" aria-hidden="true"></i>&nbsp&nbsp&nbsp{{ burger_name }}</br>
+                </li>
+                {{/if}}
+            {{/each}}  
+          </ul>
+        </div>
     </div>
 </div>
+  
