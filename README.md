@@ -1,7 +1,7 @@
 # Eat-Da-Burger
->  ### An application built with Express.js, Orm's, MySql and Handlebars.
+  ### An application built with Express.js, Orm's, MySql and Handlebars.
 
-*https://my-burger-app.herokuapp.com/*
+[Click here to view the App](https://my-burger-app.herokuapp.com/)
 
  ##### Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat.
  ##### Whenever a user submits a burger's name, the app will display the burger on the left side of the page -- waiting to be devoured.
